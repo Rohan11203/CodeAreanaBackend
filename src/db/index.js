@@ -1,11 +1,12 @@
 const { query, text } = require('express')
 const { param } = require('express-validator')
 const { Pool } = require('pg')
+
 const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'pern_auth',
-  password: 'Rohan@123',
+  password: process.env.DBPassword,
   port: 5432,
 })
 
