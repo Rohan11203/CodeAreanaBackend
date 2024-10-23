@@ -14,7 +14,7 @@ app.use(cookieParser())
 app.use(passport.initialize())
 // app.use(cors({ origin: CLIENT_URL, credentials: true }))
 app.use(cors({ 
-  origin: [CLIENT_URL, 'https://code-areana-frontend.vercel.app/'], // Add your frontend Vercel URL here
+  origin: [CLIENT_URL, 'https://code-areana-frontend.vercel.app'], // Add your frontend Vercel URL here
   credentials: true 
 }))
 // import routes
