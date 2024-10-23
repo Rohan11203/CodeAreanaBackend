@@ -6,7 +6,7 @@ const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'pern_auth',
-  password: process.env.DBPassword,
+  password: "Rohan@123",
   port: 5432,
 })
 
