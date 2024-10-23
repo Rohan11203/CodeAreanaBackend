@@ -10,6 +10,19 @@ const pool = new Pool({
   port: 5432,
 })
 
+// module.exports = {
+//   query: (text, params) => pool.query(text,params),
+// }
+
+
 module.exports = {
-  query: (text, params) => pool.query(text,params),
-}
+  query: async (text, params) => {
+    try {
+      const result = await pool.query(text, params);
+      return result;
+    } catch (err) {
+      console.error('Database query error:', err.stack);
+      throw err;
+    }
+  },
+};

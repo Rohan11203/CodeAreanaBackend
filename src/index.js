@@ -27,20 +27,20 @@ app.use('/api',authRoutes)
     res.send('Test request sent')
   })
 // app start
-// const appStart = () =>{
-//   try{
-//     app.listen(PORT, ()=>{
-//       console.log(`This app is running at http://localhost:${PORT}`)
-//     })
-//   } catch (error){
-//     console.log(`Error: ${error.message}`)
-//   }
-// }
-// appStart()
+const appStart = () =>{
+  try{
+    app.listen(PORT, ()=>{
+      console.log(`This app is running at http://localhost:${PORT}`)
+    })
+  } catch (error){
+    console.log(`Error: ${error.message}`)
+  }
+}
+appStart()
 
-  app.listen(PORT, () => {
-    console.log(`This app is running at http://localhost:${PORT}`)
-  })
+  // app.listen(PORT, () => {
+  //   console.log(`This app is running at http://localhost:${PORT}`)
+  // })
 
 
 // For Vercel
