@@ -12,7 +12,7 @@ exports.getUsers = async (req, res) => {
       users: rows,
     });
   } catch (error) {
-    console.log(error.message);
+    console.log("cannot get users",error.message);
   }
 };
 
