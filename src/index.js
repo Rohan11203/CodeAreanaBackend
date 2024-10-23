@@ -12,8 +12,11 @@ require('./middlewares/passport-middleware')
 app.use(express.json())
 app.use(cookieParser())
 app.use(passport.initialize())
-app.use(cors({ origin: CLIENT_URL, credentials: true }))
-
+// app.use(cors({ origin: CLIENT_URL, credentials: true }))
+app.use(cors({ 
+  origin: [CLIENT_URL, 'https://code-areana-frontend.vercel.app/'], // Add your frontend Vercel URL here
+  credentials: true 
+}))
 // import routes
 const authRoutes = require('./routes/auth')
 
@@ -21,13 +24,21 @@ const authRoutes = require('./routes/auth')
 app.use('/api',authRoutes)
 
 // app start
-const appStart = () =>{
-  try{
-    app.listen(PORT, ()=>{
-      console.log(`This app is running at http://localhost:${PORT}`)
-    })
-  } catch (error){
-    console.log(`Error: ${error.message}`)
-  }
-}
-appStart()
+// const appStart = () =>{
+//   try{
+//     app.listen(PORT, ()=>{
+//       console.log(`This app is running at http://localhost:${PORT}`)
+//     })
+//   } catch (error){
+//     console.log(`Error: ${error.message}`)
+//   }
+// }
+// appStart()
+
+  app.listen(PORT, () => {
+    console.log(`This app is running at http://localhost:${PORT}`)
+  })
+
+
+// For Vercel
+module.exports = app
